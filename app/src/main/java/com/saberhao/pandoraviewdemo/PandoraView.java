@@ -185,7 +185,7 @@ public class PandoraView extends View implements GestureDetector.OnGestureListen
         return false;
     }
 
-    // 8.处理惯性问题
+    // 8.为Scroller添加滑动惯性
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
         if (isLongImage) {
@@ -198,7 +198,7 @@ public class PandoraView extends View implements GestureDetector.OnGestureListen
         return false;
     }
 
-    // 9.处理计算结果
+    // 9.计算由于Scroller惯性而移位的Rect
     @Override
     public void computeScroll() {
         if (mScroller.isFinished()) {
