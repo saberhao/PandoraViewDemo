@@ -189,10 +189,10 @@ public class PandoraView extends View implements GestureDetector.OnGestureListen
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
         if (isLongImage) {
-            mScroller.fling(0, mRect.top, 0, (int) (-velocityY), 0, 0, 0,
+            mScroller.fling(0, mRect.top, 0, (int) Math.abs(velocityY), 0, 0, 0,
                     mImageHeight - (int) (mViewHeight / mScale));
         } else {
-            mScroller.fling(mRect.left, 0, (int) (-velocityX), 0, 0, mImageWidth
+            mScroller.fling(mRect.left, 0, (int) Math.abs(velocityX), 0, 0, mImageWidth
              - (int) (mViewWidth / mScale), 0, 0);
         }
         return false;
